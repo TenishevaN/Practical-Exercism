@@ -1,4 +1,5 @@
 fun transcribeToRna(dna: String): String {
+
     return dna.map { nucleotide ->
         when (nucleotide) {
             'G' -> 'C'
