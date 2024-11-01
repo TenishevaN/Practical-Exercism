@@ -1,5 +1,6 @@
 object BinarySearch {
     fun search(list: List<Int>, item: Int): Int {
+
         var low = 0
         var high = list.size - 1
 
