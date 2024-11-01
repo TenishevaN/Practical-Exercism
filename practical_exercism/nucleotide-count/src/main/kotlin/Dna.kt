@@ -1,0 +1,3 @@
+class Dna(dnaSequence: String) {
+
+}

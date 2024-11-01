@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Define the parent POM -->
+    <parent>
+        <groupId>com.yourcompany</groupId>
+        <artifactId>KotlinExercism</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath> <!-- Ensure this points correctly to the parent POM -->
+    </parent>
+
+    <!-- Define this module's artifactId -->
+    <artifactId>rna-transcription</artifactId>
+
+    <properties>
+        <kotlin.version>1.5.31</kotlin.version> <!-- Define Kotlin version here if not defined in parent -->
+        <junit.version>4.13.2</junit.version> <!-- Define JUnit version here if not defined in parent -->
+    </properties>
+
+    <dependencies>
+        <!-- Dependencies can be inherited from the parent or specifically defined here -->
+        <!-- Example: Kotlin Standard Library -->
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+
+        <!-- Example: Kotlin Test Library -->
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test-junit</artifactId>
+            <version>${kotlin.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/kotlin</sourceDirectory>
+        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>kotlin-compile</id>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>kotlin-test-compile</id>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jvmTarget>1.8</jvmTarget>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
